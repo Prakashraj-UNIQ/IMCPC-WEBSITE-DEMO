@@ -1,5 +1,5 @@
 import React from "react";
-import bgimg  from "../assets/hero1.jpg"
+import bgimg  from "../assets/cardamom1.png"
 import { Link } from "react-router-dom";
 
 export default function Home() {
