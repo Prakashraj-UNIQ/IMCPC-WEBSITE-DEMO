@@ -8,6 +8,7 @@ import OurProcess from '../components/OurProcess.jsx';
 import SpiceAppOverview from '../components/SpiceAppOverview.jsx';
 import Membership from '../components/Membership.jsx';
 import PrivacyPolicy from '../components/PrivacyPolicy';
+import ContactUs from '../components/ContactUs1.jsx';
 
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
       <FeatureProduct />
       <OurProcess />
       <SpiceAppOverview />
+      <ContactUs/>
+      
       {/* <Membership/> */}
     </div>
   )

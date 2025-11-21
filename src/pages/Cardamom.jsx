@@ -1,10 +1,15 @@
 import React from 'react'
-import Cardamom1 from '../components/Cardamom1'
+import ContactUs from '../components/ContactUs1.jsx'
+import GradesQuality from '../components/GradesQuality.jsx'
+
+
 
 export default function Cardamom () {
   return (
     <div>
-   <Cardamom1/>
+        <GradesQuality/>
+   <ContactUs/>
+   
     </div>
   )
 }
