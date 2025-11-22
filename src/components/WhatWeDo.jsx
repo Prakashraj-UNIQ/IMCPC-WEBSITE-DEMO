@@ -13,9 +13,9 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className="w-full py-20 px-1 bg-lime-200">
+    <section className="w-full py-20 px-1 bg-emerald-50">
       {/* Title */}
-      <h2 className="text-5xl font-bold text-center text-lime-800 mb-12">
+      <h2 className="text-5xl font-bold text-center text-emerald-950 mb-12">
         What We Do
       </h2>
 
@@ -26,13 +26,13 @@ export default function WhatWeDo() {
           return (
             <div
               key={index}
-              className="group bg-white rounded-xl border-2 border-lime-300 p-6 flex items-center gap-4 
-                         hover:bg-lime-700 hover:shadow-2xl transition duration-300"
+              className="group bg-white rounded-xl border-2 border-emerald-300 p-6 flex items-center gap-4 
+                         hover:bg-emerald-700 hover:shadow-2xl transition duration-300"
             >
               {/* Icon */}
-              <IconComponent className="w-10 h-10 text-lime-700 group-hover:text-white transition-colors duration-300" />
+              <IconComponent className="w-10 h-10 text-stone-700 group-hover:text-white transition-colors duration-300" />
               {/* Text */}
-              <p className="text-lg font-semibold text-lime-700 group-hover:text-white transition-colors duration-300">
+              <p className="text-lg font-semibold text-stone-700 group-hover:text-white transition-colors duration-300">
                 {point.text}
               </p>
             </div>

@@ -1,6 +1,6 @@
-
-
-import cardamomPremium from "../assets/cardamom_premium.jpg";
+import React from "react";
+import { ArrowRight } from "lucide-react"; 
+import cardamomPremium from "../assets/cardamom_premium.jpg"; // Assuming these paths are correct
 import cardamomDeluxe from "../assets/caradom_deluxe.jpg";
 import cardamomOrganic from "../assets/caradom_organic.png";
 
@@ -8,90 +8,116 @@ export default function FeatureProduct() {
   const products = [
     {
       id: "cardamom-1",
-      name: "Cardamom - Premium",
-      summary:
-        "Aromatic green cardamom from Idukki hills, carefully processed.",
-      grades: ["A", "B"],
+      name: "Royal Premium",
+      tagline: "The Aromatic Classic",
+      summary: "Sourced from the high-ranges of Idukki, offering a balanced aroma perfect for culinary mastery.",
+      grades: ["Grade A", "Grade B"],
       image: cardamomPremium,
+      price: "$$$",
     },
     {
       id: "cardamom-2",
-      name: "Cardamom - Deluxe",
-      summary:
-        "Hand-picked cardamom pods offering a strong aroma and bold flavor, ideal for premium export.",
-      grades: ["A+", "A"],
+      name: "Idukki Deluxe",
+      tagline: "Export Quality",
+      summary: "Hand-picked, bold green pods with an intense fragrance. The choice for luxury confectionery.",
+      grades: ["Grade A+", "Bold"],
       image: cardamomDeluxe,
+      price: "$$$$",
     },
     {
       id: "cardamom-3",
-      name: "Cardamom - Organic",
-      summary:
-        "Cultivated using sustainable and chemical-free methods, preserving natural aroma and purity.",
-      grades: ["Organic", "Premium"],
+      name: "Pure Organic",
+      tagline: "Earth Friendly",
+      summary: "Cultivated in chemical-free soil. Preserves the raw, untouched essence of nature.",
+      grades: ["Organic", "Certified"],
       image: cardamomOrganic,
+      price: "$$$",
     },
   ];
 
   return (
-    <section
-      id="products"
-      className="px-4 py-14 mx-auto sm:px-6 md:px-10 lg:px-20 bg-lime-200"
-    >
-      {/* Heading */}
-      <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-lime-800">
-        Our Featured Cardamom Selection
-      </h1>
+    // Updated background to a very light, soft green (off-white)
+    <section id="products" className="py-24 px-4 sm:px-6 lg:px-12 bg-emerald-50"> 
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-center space-y-4 mb-20"> {/* Increased bottom margin */}
+          <span className="text-emerald-700 font-bold tracking-widest text-sm uppercase">
+            🌱 Exclusive Collection
+          </span>
+          <h1 className="text-4xl md:text-5xl font-serif font-extrabold text-stone-900"> {/* Stronger header font */}
+            The Cardamom Selection
+          </h1>
+          <p className="text-stone-500 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+            Discover varieties sourced directly from the lush hills of Idukki. Graded for size, color, 
+            and the distinct aroma that defines luxury. Each pod tells a story of the high-range climate.
+          </p>
+        </div>
 
-      {/* Paragraph */}
-      <p className="mt-4 text-center text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
-        Discover our finest cardamom varieties, sourced from the lush plantations of Idukki.
-        Each batch is carefully graded, quality-tested, and auctioned through our
-        transparent and farmer-centric processing system.
-      </p>
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 px-4 sm:px-0">
+          {products.map((p) => (
+            <div
+              key={p.id}
+              // TRENDY CARD STYLE: Increased padding, white background, larger shadow on hover
+              className="group relative flex flex-col bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 overflow-hidden" 
+            >
+              {/* Image Container */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  // Smoother, subtler hover effect on image
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" 
+                />
+                
+                {/* Floating Grade Tags */}
+                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                  {p.grades.map((grade, i) => (
+                    <span
+                      key={i}
+                      // Pill shape, strong background/border for visibility
+                      className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider bg-white border border-emerald-300 text-emerald-800 rounded-full shadow-md" 
+                    >
+                      {grade}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-10">
-        {products.map((p) => (
-          <div
-            key={p.id}
-            className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-2xl bg-white transition-all duration-500"
-          >
-            {/* Image */}
-            <div className="h-56 sm:h-64 md:h-72 w-full overflow-hidden">
-              <img
-                src={p.image}
-                alt={p.name}
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
-              />
-            </div>
-
-            {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
-              <h3
-                className={`text-xl font-semibold text-yellow-300`}
-              >
-                {p.name}
-              </h3>
-
-              <p className="text-gray-200 text-sm mt-1">{p.summary}</p>
-
-              <div className="mt-3 flex items-center justify-between">
-                <div className="text-xs text-white font-medium">
-                  Grades: {p.grades.join(", ")}
+              {/* Card Content */}
+              <div className="flex flex-col flex-grow p-6 sm:p-7"> {/* Slightly more internal padding */}
+                <div className="mb-4">
+                  <p className="text-sm text-emerald-600 font-semibold mb-1">
+                    {p.tagline}
+                  </p>
+                  <h3 className="text-2xl font-serif font-extrabold text-stone-900 transition-colors">
+                    {p.name}
+                  </h3>
                 </div>
 
-                <button className="px-3 py-1 bg-lime-500 hover:bg-lime-600 text-white rounded-lg text-sm transition">
-                  Enquire
-                </button>
+                <p className="text-stone-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                  {p.summary}
+                </p>
+
+                {/* Footer Actions */}
+                <div className="mt-auto flex items-center justify-between pt-6 border-t border-stone-100">
+                  <span className="text-xl font-bold text-emerald-700 font-serif"> {/* Price is more prominent */}
+                    {p.price}
+                  </span>
+                  
+                  <button className="group/btn flex items-center gap-2 text-base font-semibold text-emerald-700 transition-all hover:gap-3">
+                    Enquire Now
+                    <span className="bg-emerald-100 p-2 rounded-full transition-all duration-300 group-hover/btn:bg-emerald-700 group-hover/btn:text-white">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-
-      <div className="border-t-8 border-white mt-10 pt-6 text-center text-sm text-gray-700"></div>
-      <div className="border-t-8 border-lime-800  pt-6 text-center text-sm text-gray-700"></div>
-
     </section>
   );
 }

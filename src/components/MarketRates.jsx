@@ -1,162 +1,116 @@
-import React from 'react'
+import React from 'react';
+import { 
+  Gavel, 
+  CalendarRange, 
+  TrendingUp, 
+  Scale, 
+  Users, 
+  Globe2,
+  BarChart3,
+  CheckCircle2
+} from 'lucide-react';
 
-export default function MarketRates () {
+/**
+ * MarketRatesInfo Component
+ * Displays the sources and methodology behind the price updates.
+ * Focuses on the text content provided: Auction rates, Trends, Insights.
+ */
+
+const MarketRatesInfo = () => {
+  
+  const updateSources = [
+    {
+      title: "Daily Auction Rates",
+      icon: Gavel,
+      color: "text-red-600",
+      bg: "bg-red-50",
+      desc: "Real-time closing prices from major auction centers."
+    },
+    {
+      title: "Weekly Average Prices",
+      icon: CalendarRange,
+      color: "text-blue-600",
+      bg: "bg-blue-50",
+      desc: "Consolidated averages to smooth out daily volatility."
+    },
+    {
+      title: "Seasonal Trends",
+      icon: TrendingUp,
+      color: "text-amber-600",
+      bg: "bg-amber-50",
+      desc: "Analysis of harvest cycles and weather impacts."
+    },
+    {
+      title: "Demand & Supply Insights",
+      icon: Scale,
+      color: "text-emerald-600",
+      bg: "bg-emerald-50",
+      desc: "Inventory levels vs. current market consumption."
+    },
+    {
+      title: "Buyer Requirements",
+      icon: Users,
+      color: "text-purple-600",
+      bg: "bg-purple-50",
+      desc: "Specific grade preferences from domestic bulk buyers."
+    },
+    {
+      title: "Export Market Trends",
+      icon: Globe2,
+      color: "text-cyan-600",
+      bg: "bg-cyan-50",
+      desc: "International demand signals from the Middle East & Europe."
+    }
+  ];
+
   return (
-    <div>
+    <section className="bg-white py-24 font-sans text-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-<section
-  id="market-rates"
-  class="bg-gray-900 dark:bg-gray-900 rounded-3xl p-8 shadow-2xl shadow-lime-900/50"
->
-  <motion.div
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.45 }}
-  >
-    {/* Heading */}
-    <div class="text-center mb-10">
-      <h2
-        class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-teal-400 to-lime-400"
-      >
-         Global Market Rates
-      </h2>
+        {/* --- Header --- */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest mb-4">
+            <BarChart3 size={14} />
+            Market Intelligence
+          </div>
+          <h2 className="text-4xl font-serif font-extrabold text-slate-900 mb-6">
+            Authentic Price Updates
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            In a volatile spice market, accurate data is power. We publish authentic cardamom price updates derived from six critical data points.
+          </p>
+        </div>
 
-      {/* Paragraph */}
-      <p class="mt-3 text-white max-w-3xl mx-auto text-lg">
-        Real-time spice prices are volatile, varying by grade, quality, season,
-        and auction center. Reference the structured categories below for typical
-        market value insights.
-      </p>
-    </div>
-
-    {/* Table Container */}
-    <div class="mt-8 overflow-x-auto bg-gray-800/80 rounded-xl p-0.5 shadow-inner">
-      <table
-        class="w-full text-left border-collapse text-base divide-y divide-gray-700"
-      >
-        <thead>
-          <tr class="bg-gray-700 text-gray-200 uppercase tracking-wider">
-            <th class="p-4 font-semibold rounded-tl-xl">Grade</th>
-            <th class="p-4 font-semibold">Average Price (₹/kg)</th>
-            <th class="p-4 font-semibold rounded-tr-xl">Trend</th>
-          </tr>
-        </thead>
-
-        <tbody class="text-white divide-y divide-gray-700/50">
-          {/* Cardamom Data - Row 1 */}
-          <tr class="hover:bg-gray-700/50 transition duration-150">
-            <td class="p-4 font-medium text-teal-400">AGB</td>
-            <td
-              class="p-4 font-extrabold price-animation-target text-lg text-lime-300"
+        {/* --- Grid of Sources --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {updateSources.map((item, index) => (
+            <div 
+              key={index} 
+              className="group p-8 rounded-2xl border border-slate-100 bg-white hover:border-emerald-200 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
             >
-              ₹1800 – ₹2200
-            </td>
-            <td class="p-4 text-lime-400 font-semibold">Stable</td>
-          </tr>
+              <div className={`w-14 h-14 rounded-xl ${item.bg} ${item.color} flex items-center justify-center mb-6 transition-transform group-hover:scale-110`}>
+                <item.icon size={28} strokeWidth={2} />
+              </div>
+              
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
+                {item.title}
+              </h3>
+              
+              <p className="text-slate-500 text-sm font-medium">
+                {item.desc}
+              </p>
 
-          {/* Cardamom Data - Row 2 */}
-          <tr class="hover:bg-gray-700/50 transition duration-150">
-            <td class="p-4 font-medium text-teal-400">AGS</td>
-            <td
-              class="p-4 font-extrabold price-animation-target text-lg text-lime-300"
-            >
-              ₹1600 – ₹2000
-            </td>
-            <td class="p-4 text-lime-400 font-semibold">Slight Uptrend</td>
-          </tr>
+              {/* Decorative corner accent */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-transparent to-slate-50 rounded-bl-full -mr-8 -mt-8 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+          ))}
+        </div>
 
-          {/* Cardamom Data - Row 3 */}
-          <tr class="hover:bg-gray-700/50 transition duration-150">
-            <td class="p-4 font-medium text-teal-400">Bulk / Mix Grades</td>
-            <td
-              class="p-4 font-extrabold price-animation-target text-lg text-lime-300"
-            >
-              ₹1100 – ₹1500
-            </td>
-            <td class="p-4 text-amber-500 font-semibold">Fluctuating</td>
-          </tr>
 
-          {/* Cardamom Data - Row 4 */}
-          <tr class="hover:bg-gray-700/50 transition duration-150">
-            <td class="p-4 font-medium text-teal-400">Split & Seeds</td>
-            <td
-              class="p-4 font-extrabold price-animation-target text-lg text-lime-300"
-            >
-              ₹700 – ₹1000
-            </td>
-            <td class="p-4 text-red-500 font-semibold">Lower Demand</td>
-          </tr>
 
-          {/* Cardamom Data - Row 5 - Highlighted */}
-          <tr
-            class="bg-lime-900/20 hover:bg-lime-900/40 transition duration-150"
-          >
-            <td class="p-4 font-bold text-lg text-teal-300">Export Premium</td>
-            <td
-              class="p-4 font-extrabold price-animation-target text-xl text-lime-200"
-            >
-              ₹2300 – ₹2800
-            </td>
-            <td class="p-4 text-lime-300 font-bold">High Demand</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      </div>
+    </section>
+  );
+};
 
-    {/* Footer Note */}
-    <div
-      class="mt-8 p-4 bg-gray-800 rounded-lg text-white text-sm leading-relaxed border border-gray-700"
-    >
-      <strong class="text-teal-400">Disclaimer:</strong> Prices vary daily
-      depending on auction centers, weather conditions, crop arrivals, and export
-      activity. These figures are **indicative** and should be used for general
-      market reference only.
-    </div>
-
-    {/* CSS for Animation (Simulating a dynamic update) - You would place this in a global CSS file or <style> block */}
-    {/* This adds a pulse effect to the price column on component load */}
-    <style jsx="true">{`
-      @keyframes pricePulse {
-        0% {
-          opacity: 0.5;
-          transform: translateY(3px);
-        }
-        50% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .price-animation-target {
-        animation: pricePulse 1s ease-out;
-        animation-delay: var(--delay-factor); /* Use JS/React to set this dynamically per row */
-        opacity: 0; /* Starts invisible */
-        animation-fill-mode: forwards;
-      }
-
-      /* Example of setting dynamic delay (Normally handled in JS/React map) */
-      .price-animation-target:nth-child(2) {
-        --delay-factor: 0s;
-      }
-      .price-animation-target:nth-child(3) {
-        --delay-factor: 0.1s;
-      }
-      .price-animation-target:nth-child(4) {
-        --delay-factor: 0.2s;
-      }
-      .price-animation-target:nth-child(5) {
-        --delay-factor: 0.3s;
-      }
-      .price-animation-target:nth-child(6) {
-        --delay-factor: 0.4s;
-      }
-    `}</style>
-  </motion.div>
-</section>
-    </div>
-  )
-}
+export default MarketRatesInfo;

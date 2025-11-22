@@ -7,12 +7,17 @@ import AboutUs from "./pages/AboutUs";
 import Cardamom from "./pages/Cardamom";
 import Gallery from "./pages/Gallery";
 import ContactUs from"./pages/ContactUs";
+import ScrollToTop  from "./components/ScrollToTop";
 
 import './App.css'
+// import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
   return (
+    <>
+    <ScrollToTop/>
     <Routes>
+      
       <Route path="/" element={<MainLayout />}>
 
         <Route index element={<Home />} />
@@ -23,6 +28,7 @@ function App() {
         <Route path="/contact" element={<ContactUs/>}/>
       </Route>
     </Routes>
+    </>
   );
 }
 

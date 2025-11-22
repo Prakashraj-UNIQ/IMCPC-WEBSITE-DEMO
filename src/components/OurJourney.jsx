@@ -6,7 +6,7 @@ import { FaCheckCircle, FaRegCheckCircle } from "react-icons/fa";
 
 export default function OurJourney (){
     return (
-        <section className="w-full py-16 px-20 bg-white">
+        <section className="w-full   bg-emerald-50">
             <div className=" mx-auto space-y-5">
 
                 {/* Heading */}
@@ -17,12 +17,12 @@ export default function OurJourney (){
                     <img
                         src={journeyImg}
                         alt="Our Journey"
-                        className="w-full  rounded-lg h-100 object-cover"
+                        className="w-full   h-100 object-cover"
                     />
                 </div>
 
                 <h2
-                    className="text-4xl mt-15 font-bold text-center  text-lime-700 "
+                    className="text-4xl mt-15 font-bold text-center  text-emerald-950 "
 
                 >
                     Our Journey
@@ -30,7 +30,7 @@ export default function OurJourney (){
 
 
                 {/* Paragraphs in 2 columns BELOW the image */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-20 ">
 
                     {/* LEFT SIDE → 1st Paragraph */}
                     <p
@@ -46,27 +46,27 @@ export default function OurJourney (){
                         <strong>Key Highlights:</strong><br />
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700 text-xl" />
+                            <FaCheckCircle className="text-emerald-700 text-xl" />
                             Deep expertise in cultivation and processing
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700 text-xl" />
+                            <FaCheckCircle className="text-emerald-700 text-xl" />
                             Transparent and fair auction practices
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700 text-xl" />
+                            <FaCheckCircle className="text-emerald-700 text-xl" />
                             Strong relations with growers & traders
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700 text-xl" />
+                            <FaCheckCircle className="text-emerald-700 text-xl" />
                             Commitment to quality and integrity
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700 text-xl" />
+                            <FaCheckCircle className="text-emerald-700 text-xl" />
                             Trust-driven operations across all stages
                         </span>
                     </p>
@@ -84,27 +84,28 @@ export default function OurJourney (){
                         efficient producer-driven system. Over the years, this collective strength has empowered farmers with
                         better market access and fair pricing.
                         <br /><br />
+                        <br/>
 
-                        <strong>We continue to uphold the values of:</strong><br />
+                        <strong >We continue to uphold the values of:</strong><br />
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700" /> Trust
+                            <FaCheckCircle className="text-emerald-700" /> Trust
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700" /> Transparency
+                            <FaCheckCircle className="text-emerald-700" /> Transparency
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700" /> Farmer Welfare
+                            <FaCheckCircle className="text-emerald-700" /> Farmer Welfare
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700" /> Quality Excellence
+                            <FaCheckCircle className="text-emerald-700" /> Quality Excellence
                         </span>
 
                         <span className="flex items-center gap-2">
-                            <FaCheckCircle className="text-lime-700" /> Ethical Business Practices
+                            <FaCheckCircle className="text-emerald-700" /> Ethical Business Practices
                         </span>
                     </p>
 
